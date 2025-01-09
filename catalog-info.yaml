@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: crk8gbcmt-go-gitops
+  description: This is GitOps manifest for crk8gbcmt-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: crk8gbcmt-go
+    backstage.io/kubernetes-id: crk8gbcmt-go 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: crk8gbcmt-go-gitops   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:crk8gbcmt-go
